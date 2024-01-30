@@ -1,3 +1,16 @@
+import csv
+
+def load_task():
+    with open('tasks.csv', 'r', newline = '') as file:
+        reader = csv.Dict.Reader(file)
+        return list
+
+def save_task():
+    with open('tasks.csv', 'a', newline = '') as file:
+        fieldnames = ['task', 'done']
+        writer = csv.DictWriter(file, fieldnames = fieldnames)
+        writer.writeheader()
+        writer.writerows(tasks)
 
 def main():
     tasks = []
